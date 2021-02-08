@@ -1,0 +1,14 @@
+@font-face {
+  font-family: font_default;
+  src: url(Vazir.woff2);
+}
+@font-face {
+  font-family: font_number_fa;
+  src: url(IRANSan.ttf);
+}
+  
+
+body {
+    margin: 0;
+    font-family: font_default;
+}

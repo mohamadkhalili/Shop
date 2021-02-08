@@ -1,0 +1,87 @@
+.menu
+    height: auto
+    width: 100%
+    background-color: #ffffff
+
+.menu_inner
+    width: 100%
+    height: auto
+    margin: 10px auto 10px auto
+    direction: rtl
+    align-items: center
+    display: flex
+    flex-direction: row
+    flex-wrap: nowrap
+    justify-content: space-between
+    clear: both
+    content: ""
+    >nav
+        width: 100%
+        display: flex
+        flex-direction: row
+        text-align: center
+        justify-content: space-between
+        >ul
+            width: auto
+            min-width: 720px
+            list-style: none
+            padding: 0 10px 0 0
+            // margin: 0 auto 0 auto
+            display: flex
+            flex-direction: row
+            text-align: center
+            >li
+                position: relative
+                text-align: right
+                // width: 100%
+                display: flex
+                float: right
+                display: inline-block
+                
+                margin: 0 0 0 20px
+                font-size: 1rem
+                &:hover
+                    >ul
+                        opacity: 1
+                        z-index: 10
+                        background-color: #fff
+                >a
+                    width: 100%
+                    padding: 10px 0 10px 100px
+                    display: inline-block
+                    color: #000000
+                    text-decoration: none
+                    &:hover
+                        color: #009667
+                        
+                    &:focus
+                        outline: none
+                >ul
+                    width: 100%
+                    position: absolute
+                    top: 30px
+                    list-style: none
+                    padding: 20px 10px 0 0
+                    display: block
+                    flex-direction: row
+                    text-align: center
+                    z-index: -2
+                    opacity: 0
+                    >li
+                        position: relative
+                        text-align: right
+                        width: 100%
+                        display: block
+                        float: right
+                        margin: 0
+                        font-size: 1rem
+                        >a
+                            width: 100%
+                            display: block
+                            padding: 0 0 12px 0
+                            color: #000000
+                            text-decoration: none
+                            &:hover
+                                color: #009667
+                            &:focus
+                                outline: none

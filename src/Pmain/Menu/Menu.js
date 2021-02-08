@@ -1,17 +1,13 @@
 import React, {Component} from 'react'
 import './Menu.sass'
-// import {Link} from 'react-router-dom'
-import history from "./../history"
-// import { Route , withRouter} from 'react-router-dom';
-import {Router, withRouter , Switch, Route, Link , NavLink} from "react-router-dom";
-import data from './../../Data_examples/Menu_teach.json'
+import {Link } from "react-router-dom";
 
 export default class Menu extends Component {
     constructor(props) {
         super(props);
-        this.setLocation =this.setLocation.bind(this);
         this.state = {
             product_list: '',
+            post_list: '',
             isLoaded: false
         };
     }
@@ -19,15 +15,13 @@ export default class Menu extends Component {
         const url = "http://192.168.114.6:8000/post_cat_list/";
         const response = await fetch(url);
         const data = await response.json();
-        this.setState({product_list: data})
+        this.setState({post_list: data})
+        const url_product = "http://192.168.114.6:8000/product_cat_list/";
+        const response_product = await fetch(url_product);
+        const data_product = await response_product.json();
+        this.setState({product_list: data_product})
     }
 
-    setLocation(value) {
-
-            history
-            .push(value);
-            history.key= value
-    }
 
     render() {
         return (
@@ -49,10 +43,10 @@ export default class Menu extends Component {
                                 <ul>
                                     {
                                         
-                                        this.state.product_list
-                                            ? (this.state.product_list.map((item, index) => (
+                                        this.state.post_list
+                                            ? (this.state.post_list.map((item, index) => (
                                                 <li key={index} >
-                                                    <NavLink id={index} to={"/post_category" + item.cat_url} onClick={e => this.setLocation("/post_category" + item.cat_url)}>{item.category}</NavLink>
+                                                    <Link id={index} to={"/post_category" + item.cat_url} >{item.category}</Link>
                                                 </li>
                                             )))
                                             : ''
@@ -61,6 +55,18 @@ export default class Menu extends Component {
                             </li>
                             <li>
                                 <Link to="/products">محصولات</Link>
+                                <ul>
+                                    {
+                                        
+                                        this.state.product_list
+                                            ? (this.state.product_list.map((item, index) => (
+                                                <li key={index} >
+                                                    <Link id={index} to={"/post_category" + item.cat_url} >{item.category}</Link>
+                                                </li>
+                                            )))
+                                            : ''
+                                    }
+                                </ul>
                             </li>
                             <li>
                                 <Link to="/relation">مناسبت ها</Link>

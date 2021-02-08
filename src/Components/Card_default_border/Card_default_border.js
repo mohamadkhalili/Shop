@@ -92,8 +92,8 @@ export default class Card_default_border extends Component {
         return (
             <li className="card_border">
                 <div>
-                    <Link className="link" to={this.props.data.link}></Link>
-                    <img className="img" src={this.props.data.img}/>
+                    <Link className="link" to={this.props.data.url}></Link>
+                    <img className="img" src={this.props.data.image_icon}/>
                     <span className="title">{this.props.data.title}</span>
                     <div>
                         <span className="available">
@@ -107,7 +107,7 @@ export default class Card_default_border extends Component {
                                     ? 'موجود'
                                     : 'ناموجود'
                             }</span>
-                        <span className="rank">{this.props.data.rank}
+                        <span className="rank">{this.props.data.rating.rate}
                             <AiFillStar className="star"/></span>
                     </div>
                     <span className="price">{

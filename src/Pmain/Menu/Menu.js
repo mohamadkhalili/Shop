@@ -61,7 +61,7 @@ export default class Menu extends Component {
                                         this.state.product_list
                                             ? (this.state.product_list.map((item, index) => (
                                                 <li key={index} >
-                                                    <Link id={index} to={"/post_category" + item.cat_url} >{item.category}</Link>
+                                                    <Link id={index} to={"/product_category" + item.cat_url} >{item.category}</Link>
                                                 </li>
                                             )))
                                             : ''

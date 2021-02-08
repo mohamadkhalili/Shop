@@ -68,6 +68,10 @@ export default class Pmain extends Component {
                             <Post maxWidth={maxWidth}/>
                         </Route>
                         <Route exact path="/post_category/:id/:title" key={2} render={props => <Post {...props} maxWidth={maxWidth}/>} />
+                        <Route exact path="/products" key={1}>
+                            <Products maxWidth={maxWidth}/>
+                        </Route>
+                        <Route exact path="/product_category/:id/:title" key={2} render={props => <Products {...props} maxWidth={maxWidth}/>} />
                         <Route exact path="/contact">
                             <Contact maxWidth={maxWidth}/>
                         </Route>

@@ -6,7 +6,7 @@ export default class Post extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            product_list: null,
+            post_list: null,
             previd: null
         };
     }
@@ -22,7 +22,7 @@ export default class Post extends Component {
         
         const response = await fetch(url);
         const data = await response.json();
-        this.setState({product_list: data})
+        this.setState({post_list: data})
     }
     async componentDidUpdate(){
         if(this.props.match && this.props.match.params.id != this.state.previd ){
@@ -37,7 +37,7 @@ export default class Post extends Component {
             
             const response = await fetch(url);
             const data = await response.json();
-            this.setState({product_list: data})
+            this.setState({post_list: data})
             this.setState({
                 previd: this.props.match.params.id
             })
@@ -53,14 +53,8 @@ export default class Post extends Component {
                 style={{
                     maxWidth: this.props.maxWidth
                 }}>
-                <List_article items={this.state.product_list}/>
+                <List_article items={this.state.post_list}/>
             </div>
         )
     }
 }
-
-// export default ({ match: { params: { id } } }) => {
-//     <h1>
-//         {/* {id} */}hi
-//     </h1>
-// }

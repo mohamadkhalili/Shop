@@ -84,12 +84,8 @@ export default class Pmain extends Component {
                     </Switch>
                     <Footer maxWidth={maxWidth}/>
                 </div>
-                <Modal_signin show={this.state.isOpenSignin} onClose={this.togglesignin}>
-                    Here's some content for the modal
-                </Modal_signin>
-                <Modal_signup show={this.state.isOpenSignup} onClose={this.togglesignup}>
-                    Here's some content for the modal
-                </Modal_signup>
+                <Modal_signin show={this.state.isOpenSignin} onClose={this.togglesignin}/>
+                <Modal_signup show={this.state.isOpenSignup} onClose={this.togglesignup}/>
             </BrowserRouter>
         )
     };

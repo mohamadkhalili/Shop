@@ -48,13 +48,13 @@ export default class Products extends Component {
     }
     render() {
         return (
-            <div
+            <article
                 className="product"
                 style={{
                     maxWidth: this.props.maxWidth
                 }}>
                 <List_card_main items={this.state.product_list}/>
-            </div>
+            </article>
         )
     }
 }

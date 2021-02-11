@@ -43,7 +43,7 @@ export default class Slideshow extends Component {
         clearInterval(this.timerId);
     }
 
-    onClickpage(event, value) {
+    onClickpage(e , value) {
         this.setState({
             current: value - 1
         });
@@ -51,8 +51,7 @@ export default class Slideshow extends Component {
         this.componentDidMount();
     }
 
-    onclicknext(e) {
-        e.stopPropagation();
+    onclicknext() {
         this.setState(state => ({
             current: (state.current + 1) % this.numbers.length
         }));
@@ -60,7 +59,7 @@ export default class Slideshow extends Component {
         this.componentDidMount();
     }
 
-    onclickprevious(event) {
+    onclickprevious() {
         if (this.state.current - 1 >= 0) 
             this.setState(state => ({
                 current: (state.current - 1)
@@ -112,9 +111,9 @@ export default class Slideshow extends Component {
                         </div>
                     </div>
                     <span className="next_btn" >
-                        <GrNext onClick={e => this.onclicknext(e)} className="next_ic"/>
+                        <GrNext onClick={() => this.onclicknext()} className="next_ic"/>
                     </span>
-                    <span className="previous_btn" onClick={e => this.onclickprevious(e)}>
+                    <span className="previous_btn" onClick={() => this.onclickprevious()}>
                         <GrPrevious className="previous_ic"/>
                     </span>
 

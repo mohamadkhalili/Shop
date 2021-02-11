@@ -48,13 +48,13 @@ export default class Post extends Component {
     }
     render() {
         return (
-            <div
+            <article
                 className="post"
                 style={{
                     maxWidth: this.props.maxWidth
                 }}>
                 <List_article items={this.state.post_list}/>
-            </div>
+            </article>
         )
     }
 }

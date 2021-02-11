@@ -14,7 +14,7 @@ export default class Header extends Component {
 
     render() {
         return (
-            <div
+            <header
                 className="header"
                 style={{
                     maxWidth: this.props.maxWidth
@@ -30,12 +30,12 @@ export default class Header extends Component {
                     <span className="user_txt">حساب کاربری</span>
                     <span className="user_icon"><AiOutlineUser/></span>
                     <div className="box_user">
-                        <span onClick={e => this.props.open_modal_signin()}>ورود به حساب</span>
-                        <span onClick={e => this.props.open_modal_signup()}>ثبت نام</span>
+                        <span onClick={() => this.props.open_modal_signin()}>ورود به حساب</span>
+                        <span onClick={() => this.props.open_modal_signup()}>ثبت نام</span>
                     </div>
                 </div>
 
-            </div>
+            </header>
         )
     }
 }

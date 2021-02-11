@@ -25,7 +25,7 @@ export default class Menu extends Component {
 
     render() {
         return (
-            <div className="menu">
+            <nav className="menu">
                 <div
                     className="menu_inner"
                     style={{
@@ -80,7 +80,7 @@ export default class Menu extends Component {
                         </ul>
                     </nav>
                 </div>
-            </div>
+            </nav>
         )
     }
 }

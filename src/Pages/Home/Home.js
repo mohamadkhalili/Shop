@@ -1,11 +1,9 @@
 import React, {Component} from 'react'
-import ReactDOM from 'react-dom'
 import Slideshow from './../../Components/SlideShow/Slideshow'
 import Banner from './../../Components/Banner/Banner'
 import List_card_main from './../../Components/List_cards_main/List_card_main'
 import List_article from './../../Components/List_article/List_article'
-import data1 from './../../Data_examples/Card_data.json'
-import data2 from './../../Data_examples/Article_list_data.json'
+
 
 export default class Home extends Component {
     constructor(props) {
@@ -27,20 +25,20 @@ export default class Home extends Component {
     }
     render() {
         return (
-            <div>
-                <Slideshow maxWidth={this.props.maxWidth} time={10000}/>
-                <Banner maxWidth={this.props.maxWidth}/>
-                <div
+            <main>
+                <article><Slideshow maxWidth={this.props.maxWidth} time={10000}/></article>
+                <article><Banner maxWidth={this.props.maxWidth}/></article>
+                <article
                     className="card_article"
                     style={{
                         maxWidth: this.props.maxWidth
                     }}>
                     <div>
-                        <span>مطالب پیشنهادی</span>
+                        <span>کالا های پیشنهادی</span>
                     </div>
                     <List_card_main items={this.state.product_list}/>
-                </div>
-                <div
+                </article>
+                <article
                     className="card_article"
                     style={{
                         maxWidth: this.props.maxWidth
@@ -49,8 +47,8 @@ export default class Home extends Component {
                         <span>مطالب پیشنهادی</span>
                     </div>
                     <List_article items={this.state.post_list}/>
-                </div>
-            </div>
+                </article>
+            </main>
         )
     }
 }

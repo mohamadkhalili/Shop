@@ -5,7 +5,7 @@ import './Footer.sass'
 export default class Footer extends Component {
     render() {
         return (
-            <div className="footer">
+            <footer className="footer">
                 <div
                     style={{
                         maxWidth: this.props.maxWidth
@@ -52,7 +52,7 @@ export default class Footer extends Component {
                         </li>
                     </ul>
                 </div>
-            </div>
+            </footer>
         )
     }
 }
